@@ -10,7 +10,7 @@ def query(ticker):
 
     # Fetch historical market data for the last 30 days
     historical_data = ticker.history(period="5d")
-    historical_data = historical_data['Close'] # Closing price only
+    historical_data = round(historical_data['Close'], 2) # Closing price only
     
     return historical_data.tolist()
 
