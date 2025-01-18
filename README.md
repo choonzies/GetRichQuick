@@ -2,7 +2,7 @@
 A web app that crawls the web for stock information, then predicts the price movement using an LSTM model in neural networks. 
 
 **By entering the ticker of a stock, you will be able to extract the closing price from the previous 5 days.**
-![home page](Assets/combined.jpg)
+![home page](Assets/combined.png)
 
 **LSTM model will make predictions on the future prices (up to 7 days) based on the extracted data.**
 
