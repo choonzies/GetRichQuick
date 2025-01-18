@@ -20,7 +20,7 @@ def make_prediction(list_of_inputs):
     
     ret_list = []
     for i in range(1, 8):
-        ret_list.append(f'Day {i}: {predicted[i-1] + final}')
+        ret_list.append(f'Day {i}: {round(predicted[i-1] + final, 2)}')
     
     return ret_list
 
