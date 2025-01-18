@@ -1,5 +1,5 @@
 # getRichQuick
-This repository contains a web application for predicting stock prices using a Long Short-Term Memory (LSTM) model built with PyTorch. The application integrates a React frontend, a Django backend, and uses the `yfinance` library to fetch stock data.
+A web app that crawls the web for stock information, then predicts the price movement using an LSTM model in neural networks. 
 
 ## Features 🔥🔥
 
