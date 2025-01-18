@@ -18,7 +18,7 @@ def query(ticker):
 
     # Fetch historical market data for the last 30 days
     historical_data = ticker.history(period="5d")
-    historical_data = historical_data['Close'] # Closing price only
+    historical_data = round(historical_data['Close'], 2) # Closing price only
     
     return historical_data.tolist()
 
@@ -45,7 +45,7 @@ def make_prediction(list_of_inputs):
     
     ret_list = []
     for i in range(1, 8):
-        ret_list.append(f'{predicted[i-1] + final}')
+        ret_list.append(f'{round(predicted[i-1] + final, 2)}')
     
     return ret_list
 
@@ -58,9 +58,9 @@ def handle_input(request):
         if not stock_name:
             return Response({'error': 'Stock name is required'}, status=400)
         
-        past_five_data = query(stock_name)
-        future = make_prediction(past_five_data)
-        return Response(future)
+        past_prices = query(stock_name)
+        future_prices = make_prediction(past_prices)
+        return Response({'future_prices': future_prices, 'past_prices': past_prices, 'stock': stock_name.upper()})
                     
     except Exception as e:
         return Response({'error': str(e)}, status=500)
