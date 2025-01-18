@@ -4,4 +4,4 @@ from rest_framework.response import Response
 
 @api_view(['GET'])
 def get_predictions(request):
-    return Response({'day1': '123'})
+    return Response({'message': '999'})
