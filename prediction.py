@@ -7,6 +7,7 @@ model = torch.jit.load('lstm_scripted.pt')
 scaler = joblib.load('scaler.save')
 
 def make_prediction(list_of_inputs):
+    final = list_of_inputs[-1]
     input = np.array(list_of_inputs)
     input_repeated = np.tile(input, (5, 1)) 
     input_tensor = torch.tensor(input_repeated, dtype=torch.float32).unsqueeze(0)
@@ -19,10 +20,10 @@ def make_prediction(list_of_inputs):
     
     ret_list = []
     for i in range(1, 8):
-        ret_list.append(f'Day {i}: {predicted[i-1]}')
+        ret_list.append(f'Day {i}: {predicted[i-1] + final}')
     
     return ret_list
 
-# input = [104581.0, 101217.0, 99589.9, 97183.0, 94984.1]
-# print(make_prediction(input))
+input = [104581.0, 101217.0, 99589.9, 97183.0, 94984.1]
+print(make_prediction(input))
     
