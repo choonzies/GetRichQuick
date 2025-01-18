@@ -3,7 +3,7 @@ import yfinance as yf
 # Define the ticker symbol
 stock = "MSFT"
 
-# Returns the pandas dataframe of the ticker
+# Returns the list of past 5 days closing price of the ticker
 def query(ticker):
     # Create a Ticker object
     ticker = yf.Ticker(ticker)
