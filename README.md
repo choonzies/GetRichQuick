@@ -15,7 +15,7 @@ This repository contains a web application for predicting stock prices using a L
 - **Machine Learning**: PyTorch
 - **Data Source**: Yahoo Finance (`yfinance` library)
 
-## Notebook
+## Notebook for LSTM Model
 ![Static Badge](https://img.shields.io/badge/Link-red?style=for-the-badge&label=link&link=https%3A%2F%2Fgithub.com%2Flifrocszh%2FgetRichQuick%2Fblob%2Fmain%2FModel%2520Training%2Factual_model.ipynb)
 ---
 
