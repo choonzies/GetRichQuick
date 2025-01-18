@@ -30,3 +30,14 @@ git clone https://github.com/lifrocszh/getRichQuick.git
 ## License
 ![GitHub License](https://img.shields.io/github/license/lifrocszh/getRichQuick)
 
+## Acknowledgments
+
+- **[PyTorch](https://pytorch.org/)**: Choice of machine learning framework, enabling the development of the LSTM model used in this project.
+- **[Yahoo Finance](https://finance.yahoo.com/)**: For real-time stock market data and APIs via the `yfinance` library.
+- **[React](https://reactjs.org/)**: Interactive frontend framework for the web app.
+- **[Django](https://www.djangoproject.com/)**: Framework for backend API.
+
+## Other Contributors
+**[Poh Jing Choon](https://github.com/choonzies)**
+
+
