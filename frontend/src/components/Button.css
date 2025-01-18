@@ -1,0 +1,23 @@
+.btn {
+    background-color: #28a745; /* Money green background */
+    color: white;              /* White text */
+    padding: 15px 30px;        /* Larger padding for a bigger button */
+    border: none;              /* Remove border */
+    border-radius: 8px;        /* More rounded corners */
+    font-size: 18px;           /* Larger font size */
+    cursor: pointer;          /* Change cursor to pointer */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    box-shadow: 0 5px 15px rgba(0, 128, 0, 0.3); /* Greenish shadow for a "money" feel */
+}
+
+.btn:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: scale(1.1);      /* Slightly enlarge on hover */
+    box-shadow: 0 8px 25px rgba(0, 128, 0, 0.4); /* Stronger shadow on hover */
+}
+
+.btn:active {
+    background-color: #1e7e34; /* Even darker green when clicked */
+    transform: scale(0.98);     /* Shrink the button slightly */
+    box-shadow: 0 3px 10px rgba(0, 128, 0, 0.2); /* Lighter shadow on active state */
+}
