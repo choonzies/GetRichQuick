@@ -2,6 +2,27 @@ from django.shortcuts import render
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
+
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_http_methods
+import json
+
+
+import yfinance as yf
+
+# Returns the list of past 5 days closing price of the ticker
+def query(ticker):
+    # Create a Ticker object
+    ticker = yf.Ticker(ticker)
+
+    # Fetch historical market data for the last 30 days
+    historical_data = ticker.history(period="5d")
+    historical_data = historical_data['Close'] # Closing price only
+    
+    return historical_data.tolist()
+
+
 import torch
 import numpy as np
 import joblib
@@ -28,9 +49,19 @@ def make_prediction(list_of_inputs):
     
     return ret_list
 
-input = [104581.0, 101217.0, 99589.9, 97183.0, 94984.1]
-# print(make_prediction(input))
+@api_view(['POST'])
+def handle_input(request):
+    try:
+        stock_name = request.data.get('stock_name')
+        print(stock_name)
+        
+        if not stock_name:
+            return Response({'error': 'Stock name is required'}, status=400)
+        
+        past_five_data = query(stock_name)
+        future = make_prediction(past_five_data)
+        return Response(future)
+                    
+    except Exception as e:
+        return Response({'error': str(e)}, status=500)
     
-@api_view(['GET'])
-def get_predictions(request):
-    return Response(make_prediction(input))
