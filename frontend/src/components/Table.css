@@ -1,0 +1,41 @@
+.table-container {
+    overflow-x: auto; /* Allows horizontal scroll if table overflows */
+    margin: 20px;
+    border-radius: 8px;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #e7ebef;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .table th,
+  .table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #0000;
+  }
+  
+  .table th {
+    background-color: #707ceb;
+    color: black;
+    font-weight: bold;
+  }
+  
+  .table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .table-cell {
+    font-size: 14px;
+    color: black;
+  }
+  
+  @media (max-width: 768px) {
+    .table {
+      font-size: 12px;
+    }
+  }
+  
