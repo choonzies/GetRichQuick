@@ -2,7 +2,6 @@ import torch
 import numpy as np
 import joblib
 
-# Load the scripted model and scaler model
 model = torch.jit.load('lstm_scripted.pt')
 scaler = joblib.load('scaler.save')
 
