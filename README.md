@@ -30,20 +30,16 @@ A web app that crawls the web for stock information, then predicts the price mov
 - Ensure that you meet the following prerequisites:
   - Python 3.12.8
   - Node.js 22.12.0
-  - React 19.0.0
-  - Django 5.1.5
-  - PyTorch 2.5.1
-  - Scikit-Learn 1.6.1
 
 1) Clone the Repository
 ```bash
 git clone https://github.com/lifrocszh/getRichQuick.git
 ```
-2) `cd` into the first backend folder, then run `python manage.py runserver 9000`
-   (Important: Set 9000 as the port number)
-3) `cd` into the frontend folder, then run `npm start`
-4) Wait for both browser windows to open, then access the window with the UI.
-5) Key in any ticker from Yahoo! finance, and watch the price predictions!
+2) `cd` into the first backend folder, then run `python -m venv venv; ./venv/Scripts/activate; pip install -r requirements.txt;` to create a virual environment and install python dependencies.
+3) Run  `python manage.py runserver 9000` to start the backend server. (Important: Set 9000 as the port number)
+4) `cd` into the frontend folder, then run `npm i; npm start;`
+5) Wait for both browser windows to open, then access the window with the UI.
+6) Key in any ticker from Yahoo! finance, and watch the price predictions!
 
 ## License
 ![GitHub License](https://img.shields.io/github/license/lifrocszh/getRichQuick)
@@ -56,6 +52,6 @@ git clone https://github.com/lifrocszh/getRichQuick.git
 - **[Django](https://www.djangoproject.com/)**: Framework for backend API.
 
 ## Other Contributors
-**[Poh Jing Choon](https://github.com/choonzies)**
+**[Wang Ziheng](https://github.com/lifrocszh)**
 
 
